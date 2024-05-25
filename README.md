@@ -1,7 +1,126 @@
 # Herramienta de visualización para el monitoreo y análisis de clientes no regulados en la empresa Electro Dunas S.A.A
 
-Con el objetivo de que el Grupo Energético de Bogotá (GEB) y Electro Dunas, filial de Perú, use la información técnica de los históricos reportados de cada medidor para generar un entendimiento de los patrones de consumo de energía de los clientes no regulados del departamento de ICA y detectar anomalías en la operación para incrementar las ventas, hacer más eficiente la entrega de energía y mejorar el servicio al cliente, se requiere de una herramienta que pueda visualizar toda esa información por cliente, genere reporte de datos anómalos y que tenga una interfaz amigable con el usuario. Esta herramienta se construirá a partir de los reportes de los medidores con una granularidad de horas y la caracterización económica de los clientes, para generar una segmentación en grupos con necesidades y comportamientos similares; la detección de anomalías se enfocará en los niveles de consumo y los reportes de tensión, utilizando algoritmos no supervisados, ventanas móviles y el análisis exploratorio de la distribución teórica de la Ley de Benford.  
+![Grupo de Energía de Bogota](./IMGS/logoGEB.svg)
 
-El desempeño de la herramienta va a ser valorada mediante una encuesta de satisfacción que debe superar el 80% y que de las anomalías detectadas sean valoradas al 80% por el área técnica. Los criterios de éxito se centran en la mejora del servicio, el aumento de las ventas de energía y la eficiencia del sistema, con el objetivo de garantizar un negocio rentable y sostenible en el tiempo en su relación con los clientes. La reducción del promedio mensual de energía reactiva en un 5%, el aumento del consumo de energía en un 5%, y la disminución del promedio mensual de mediciones catalogadas como sobrecargas y bajonazos de energía en un 10%; son los indicadores clave para evaluar el éxito del proyecto con los objetivos de negocio. 
 
-Este proyecto, como todos los de su naturaleza, enfrenta la triple restricción de alcance, tiempo y costo. Para identificar crear el modelo de anomalías en los reportes de los medidores y el dashboard, se requiere un equipo especializado, incluyendo Analista de Datos, Ingeniero en Sistemas y Experto en Energía. La implementación tomará entre 4 y 6 meses, lo que implica una gestión rigurosa del tiempo. El presupuesto total es de $101,309,200 COP. El resultado esperado incluye un dashboard Interactivo para visualizar anomalías y optimizar el uso de recursos energéticos. El equilibrio de estos factores será clave para el éxito del proyecto y la mejora de la calidad del servicio de Electro Dunas.  
+<div align="center">
+  ¿Cómo podemos monitorear y determinar los consumos anomalos de los clientes no regulados dando uso a sus datos históricos de consumo para ayudar al Grupo Energético de Bogotá con su toma de decisiones?  
+  <br />
+  <a href="#acerca-de"><strong>Explorar gráficas »</strong></a>
+  <br />
+</div>
+
+<div align="center">
+<br />
+
+[![Project license](https://img.shields.io/github/license/jmanjarresm/Proyecto_Final_Aprend_Sup_g17.svg?style=flat-square)](LICENSE)
+
+[![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/dfgomezc/aribnb_optimize_prices/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+[![Propuesta Inicial](https://img.shields.io/badge/Propuesta-Inicial-green)](https://github.com/jmanjarresm)
+
+</div>
+
+<details open="open">
+<summary>Tabla de Contenido</summary>
+
+- [Acerca de](#acerca-de)
+  - [Creado con](#creado-con)
+- [Empezando](#empezando)
+  - [Prerrequisitos](#prerrequisitos)
+- [Usos](#usos)
+- [Hoja de Ruta](#hoja-de-ruta)
+- [Soporte](#soporte)
+- [Contribuciones](#contribuciones)
+- [Autores](#autores)
+- [Licencia](#licencia)
+- [Agradecimientos](#agradecimientos)
+
+</details>
+
+---
+
+## Acerca de
+
+<table><tr><td>
+
+
+Electro Dunas S.A.A es una empresa de distribución y comercialización de energía eléctrica en Perú que pertenece al grupo de Energía de Bogotá en Colombia. La empresa está orientada a la prestación del servicio público de distribución de energía eléctrica y alumbrado público, tanto a clientes residenciales como empresas y entidades gubernamentales. La calidad en los procesos operativos que intervienen en las actividades anteriores influye directamente en el objetivo estratégico de la empresa de cumplir de las expectativas de clientes e inversionistas. Lo anterior acompañado de la visión de ser líderes en el mercado se buscan poner en marcha estrategias de innovación y gestión de riesgos para la compañía que brinden herramientas para la gestión y toma de decisiones.  
+
+Entre sus clientes están los clientes no regulados o libres, con un nivel de consumo anual de más de 2,5 MW en cada punto de suministro. Para el año 2022 este segmento de clientes fue el de mayor actividad por lo que la compañía y sus inversionistas están interesados en conocer el comportamiento de consumo e identificar posibles anomalías. Este repositorio se enfoca en la exploración de modelos analíticos que permitan identificar anomalías, bajo la condición de no contar con información histórica de estas, lo que conlleva a la necesidad de emplear modelos no supervisados que puedan detectar patrones anómalos. 
+
+Con base en lo anterior, se han seleccionado tres algoritmos ampliamente utilizados en la detección de anomalías en el consumo energético: Isolation Forest, K-Means y OCSVM (One Class Support Vector Machine). Estos modelos ofrecen la flexibilidad y la eficacia necesarias para abordar la complejidad de los datos energéticos y adaptarse a las necesidades específicas de la entidad. 
+
+A lo largo de este respositorio, se detallará el proceso metodológico utilizado, desde la preparación de datos hasta la evaluación de modelos, destacando la integración coherente de modelos descriptivos y la detección de anomalías. Además, se analizarán los resultados obtenidos, se identificarán posibles ajustes y se establecerá un plan para la implementación del prototipo funcional que se creara con aquel modelo que presente los mejores resultados.
+
+
+La estructura de carpetas para almacenar la información es:
+
+- **INPUTS**: En esta carpeta se va almacenar toda la información de entrada al modelo de machine learning. Al interior la información va a ser clasificada en bruto, procesada y resultado. 
+ - **OUTPUTS**: En esta carpeta van a estar todas las salidas que se necesiten para el despliegue del modelo. Al interior de esta carpeta se van a encontrar las anomalías detectadas y otras salidas
+- **IMGS**: Carpeta de imágenes para los .README, notebooks.
+- **SCRIPTS**: Los scripts van a estar numerados y nombrados de acuerdo a la evolución al modelo que fue evaluado.
+- **DOCS**: En esta carpeta se van a almacenar todos los documentos de referencia, metadatos, plan de datos, resultados y todos los documentos que no se puedan clasificar en las carpetas anteriores.
+
+</td></tr></table>
+
+### Creado con
+
+En este repositorio, se ha realizado un análisis de datos y modelos No Superivsados Isolation Forest, K-Means y OCSVM utilizando Python como herramienta principal.
+
+#### Uso de Python
+
+Para el desarrollo del proyecto se da uso a Python para todo el proceso de análisis de datos. Python nos proporciona una amplia gama de bibliotecas y herramientas para realizar análisis de datos de manera efectiva, lo que incluye la limpieza de datos, la visualización de resultados y la implementación de algoritmos de análisis de anomalías.
+
+#### Isolation Forest
+
+El algoritmo Isolation Forest fue seleccionado para ser evaluado debido a su uso en varias oportunidades para la detección de anomalías en el consumo de energía y su bajo costo computacional.
+
+#### K-Means
+
+El algoritmo K-Means due seleccionado para su evaluación por su simplicidad y eficacia en identificar clústeres de datos, lo que ayuda a identificar patrones normales de comportamiento del consumo de energía. Además de lo anterior está el hecho de que se ha aplicado en múltiples ocasiones en la industria para la detección de datos anómalos.
+
+#### One-Class Support Vector Machine (OCSVM) 
+
+El algoritmo OCSVM fue elegido por su capacidad para encontrar la región de datos más densa y distinguir entre puntos normales y anómalos en un espacio multidimensional. Esto lo hace particularmente adecuado para detectar anomalías en conjuntos de datos energéticos, donde es crucial identificar desviaciones significativas del comportamiento esperado.
+
+## Empezando
+
+### Prerrequisitos
+
+Para trabajar en este proyecto y ejecutar los análisis de datos y puntos calientes, se deben cumplir con los siguientes prerrequisitos:
+
+Python: Tener Python instalado en el sistema. Este proyecto se ha desarrollado utilizando Python 3. Se puede descargar Python desde python.org.
+
+Bibliotecas de Python: Instalar las bibliotecas de Python necesarias utilizando el gestor de paquetes pip. Se debe instalar ejecutando el siguiente comando en la terminal:
+
+pip install pandas matplotlib seaborn scikit-learn
+
+Estas bibliotecas son esenciales para el análisis de datos, visualización y análisis de anomalías en Python.
+
+## Usos
+
+Este repositorio muestra el proceso de evaluación que se realizó a los diferentes modelos para identificar aquel que mejor detecta anomalías se podra observar el paso a paso en esta determinación acompañado por el documento [Proyecto](https://github.com/dfgomezc/aribnb_optimize_prices/blob/main/DOCS/Mejorando_la_Competitividad_en_Airbnb-_Optimizaci%C3%B3n_de_Precios_de_Alquiler_en_Nueva_York_V4.pdf)
+En el que se podrá ver los resultados encontrados.
+
+## Autores
+
+El Repositorio fue creado por [Juan Felipe Manjarres](https://github.com/jmanjarresm).
+
+El Proyecto fue realizado por:
+- Mayra Neisa
+- Lina Marcela Ladino
+
+Para ver todos los autores ver la [página de contribuciones](https://github.com/jmanjarresm/Proyecto_Grado_MIAD/graphs/contributors).
+
+
+## Licencia
+
+Este proyecto esta licenciado bajo **MIT license**.
+
+Ver [LICENCIA](LICENSE) para más información.
+
+## Agradecimientos
+
+Se agradece el apoyo de la Universidad de los Andes en el desarrollo de este proyecto
+
+
