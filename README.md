@@ -1,6 +1,6 @@
 # Herramienta de visualización para el monitoreo y análisis de clientes no regulados en la empresa Electro Dunas S.A.A
 
-![Grupo de Energía de Bogota](./IMGS/logoGEB.svg)
+![Grupo de Energía de Bogota](./IMGS/logoGEB.png)
 
 
 <div align="center">
