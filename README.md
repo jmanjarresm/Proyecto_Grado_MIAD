@@ -58,8 +58,9 @@ La estructura de carpetas para almacenar la información es:
 - **INPUTS**: En esta carpeta se va almacenar toda la información de entrada al modelo de machine learning. Al interior la información va a ser clasificada en bruto, procesada y resultado. 
  - **OUTPUTS**: En esta carpeta van a estar todas las salidas que se necesiten para el despliegue del modelo. Al interior de esta carpeta se van a encontrar las anomalías detectadas y otras salidas
 - **IMGS**: Carpeta de imágenes para los .README, notebooks.
-- **SCRIPTS**: Los scripts van a estar numerados y nombrados de acuerdo a la evolución al modelo que fue evaluado.
+- **SCRIPTS**: Los scripts van a estar numerados y nombrados de acuerdo a la evolución del proyecto.
 - **DOCS**: En esta carpeta se van a almacenar todos los documentos de referencia, metadatos, plan de datos, resultados y todos los documentos que no se puedan clasificar en las carpetas anteriores.
+- **ENTRADA**: En la primera página del repositorio se podran encontrar los notebooks que fueron utilizados para la evaluación de la calidad de la información y la evaluación de cada modelo.
 
 </td></tr></table>
 
