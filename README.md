@@ -55,7 +55,7 @@ A lo largo de este respositorio, se detallará el proceso metodológico utilizad
 
 La estructura de carpetas para almacenar la información es:
 
-- **INPUTS**: En esta carpeta se va almacenar toda la información de entrada al modelo de machine learning. Al interior la información va a ser clasificada en bruto, procesada y resultado. 
+- **INPUTS**: En esta carpeta se almaceno toda la información de entrada al modelo de machine learning. Por temas de confidencialidad esta información no se encuentra en el repositorio pero en los notebook se pueden observar los resultados del uso de la misma para la evaluación de modelos.
  - **OUTPUTS**: En esta carpeta van a estar todas las salidas que se necesiten para el despliegue del modelo. Al interior de esta carpeta se van a encontrar las anomalías detectadas y otras salidas
 - **IMGS**: Carpeta de imágenes para los .README, notebooks.
 - **SCRIPTS**: Los scripts van a estar numerados y nombrados de acuerdo a la evolución del proyecto.
