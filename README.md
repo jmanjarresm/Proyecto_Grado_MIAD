@@ -100,7 +100,7 @@ Estas bibliotecas son esenciales para el análisis de datos, visualización y an
 
 ## Usos
 
-Este repositorio muestra el proceso de evaluación que se realizó a los diferentes modelos para identificar aquel que mejor detecta anomalías se podra observar el paso a paso en esta determinación acompañado por el documento [Proyecto](https://github.com/dfgomezc/aribnb_optimize_prices/blob/main/DOCS/Mejorando_la_Competitividad_en_Airbnb-_Optimizaci%C3%B3n_de_Precios_de_Alquiler_en_Nueva_York_V4.pdf)
+Este repositorio muestra el proceso de evaluación que se realizó a los diferentes modelos para identificar aquel que mejor detecta anomalías se podra observar el paso a paso en esta determinación acompañado por el documento [Anexo Técnico](https://github.com/jmanjarresm/Proyecto_Grado_MIAD/blob/main/DOCS/AnexoT%C3%A9cnico_gr11.pdf)
 En el que se podrá ver los resultados encontrados.
 
 ## Autores
